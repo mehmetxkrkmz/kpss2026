@@ -1,0 +1,321 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #4ade80;
+  --secondary-color: #3b82f6;
+  --accent-color: #8b5cf6;
+  --background-light: linear-gradient(135deg, #d0f0fd, #f0e5ff);
+  --background-dark: linear-gradient(135deg, #1e293b, #0f172a);
+  --text-light: #111827;
+  --text-dark: #f9fafb;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #425466;
+  --btn-bg-light: var(--secondary-color);
+  --btn-bg-dark: var(--accent-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--background-light);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.5s, color 0.5s;
+  padding: 20px;
+}
+
+body.dark {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.motivation {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  min-width: 220px;
+  animation: fadein 1s ease-in-out;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.welcome {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.toggle-btn {
+  padding: 8px 15px;
+  background-color: var(--btn-bg-light);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgb(59 130 246 / 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--accent-color);
+}
+
+body.dark .toggle-btn {
+  background-color: var(--btn-bg-dark);
+  box-shadow: 0 5px 10px rgb(139 92 246 / 0.5);
+}
+
+body.dark .toggle-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* MAIN CONTENT */
+
+.content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  flex: 1 1 300px;
+  max-width: 480px;
+}
+
+/* SUBJECT CARDS */
+
+.subject {
+  background-color: var(--card-bg-light);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+  transition: all 0.4s ease-in-out;
+}
+
+.subject h2 {
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 6px;
+}
+
+.subject ul {
+  list-style: none;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.subject ul::-webkit-scrollbar {
+  width: 6px;
+}
+.subject ul::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.subject ul li {
+  font-size: 1rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.subject ul li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ✔️ Check yapılınca görünüm */
+.subject ul li input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.subject:hover {
+  background-color: var(--primary-color);
+  box-shadow: 0 12px 24px rgba(74, 222, 128, 0.5);
+  color: white;
+}
+
+.subject:hover h2 {
+  color: white;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 30px 0 10px 0;
+}
+
+.btn-link {
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.4);
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-link:hover {
+  background-color: var(--accent-color);
+}
+
+body.dark .subject {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.15);
+  color: var(--text-dark);
+}
+
+body.dark .subject:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 12px 24px rgba(139, 92, 246, 0.5);
+  color: white;
+}
+
+body.dark .btn-link {
+  background-color: var(--accent-color);
+  box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
+}
+
+body.dark .btn-link:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    max-width: 90vw;
+  }
+}
+
+.timer-section {
+  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#timer-display {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.timer-buttons button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s ease;
+}
+
+.timer-buttons button:hover {
+  background-color: #1976d2;
+}
+
+.history-box {
+  margin-top: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+  text-align: left;
+}
+.mindmap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  gap: 15px;
+}
+
+.node.main {
+  background-color: #2196f3;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.node.main:hover {
+  background-color: #1976d2;
+}
+
+.branch {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.branch div {
+  background-color: #f9f9f9;
+  border-left: 4px solid #2196f3;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

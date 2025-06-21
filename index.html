@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KPSS 2026 Hazırlık</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div id="motivation" class="motivation"></div>
+    <div class="welcome">Hoş geldin, KPSS savaşçısı 💪</div>
+    <button id="darkModeToggle" class="toggle-btn">Karanlık/Açık Mod</button>
+  </header>
+
+  <section class="timer-section">
+    <div id="timer-display">00:00:00</div>
+    <div class="timer-buttons">
+      <button onclick="startTimer()">Derse Başla</button>
+      <button onclick="pauseTimer()">Mola</button>
+      <button onclick="resetTimer()">Ders Bitti</button>
+      <button onclick="showHistory()">📅 Geçmiş Günler</button>
+    </div>
+    <div id="history" class="history-box" style="display:none;"></div>
+  </section>
+
+  <main class="content">
+    <section id="mindmap" class="mindmap">
+
+      <!-- Matematik -->
+      <div class="node main" onclick="toggleBranch('math')">📘 Matematik</div>
+      <div class="branch" id="branch-math">
+        <div><input type="checkbox"> Temel Kavramlar</div>
+        <div><input type="checkbox"> Bölme ve Bölünebilme Kuralları</div>
+        <div><input type="checkbox"> Sayı Basamakları</div>
+        <div><input type="checkbox"> Rasyonel Sayılar</div>
+        <div><input type="checkbox"> Ondalıklı Sayılar</div>
+        <div><input type="checkbox"> Mutlak Değer</div>
+        <div><input type="checkbox"> Basit Eşitsizlikler</div>
+        <div><input type="checkbox"> Üslü Sayılar</div>
+        <div><input type="checkbox"> Köklü Sayılar</div>
+        <div><input type="checkbox"> Çarpanlara Ayırma</div>
+        <div><input type="checkbox"> Oran-Orantı</div>
+        <div><input type="checkbox"> Denklem Kurma</div>
+        <div><input type="checkbox"> Problemler</div>
+        <div><input type="checkbox"> İşlem</div>
+        <div><input type="checkbox"> Kümeler</div>
+        <div><input type="checkbox"> Fonksiyonlar</div>
+        <div><input type="checkbox"> Permüstasyon-Kombinasyon</div>
+        <div><input type="checkbox"> Olasılık</div>
+        <div><input type="checkbox"> Tablo, Grafik Okuma ve Yorumlama</div>
+        <div><input type="checkbox"> Sayısal Mantık Soruları</div>
+      </div>
+
+      <!-- Geometri -->
+      <div class="node main" onclick="toggleBranch('geo')">📐 Geometri</div>
+      <div class="branch" id="branch-geo">
+        <div><input type="checkbox"> Doğruda Açılar</div>
+        <div><input type="checkbox"> Üçgenler</div>
+        <div><input type="checkbox"> Dörtgenler – Çokgenler</div>
+        <div><input type="checkbox"> Çember – Daire</div>
+        <div><input type="checkbox"> Analtik Geometri</div>
+        <div><input type="checkbox"> Katı Cisimler</div>
+      </div>
+
+      <!-- Tarih -->
+      <div class="node main" onclick="toggleBranch('history')">📜 Tarih</div>
+      <div class="branch" id="branch-history">
+        <div><input type="checkbox"> İlk Türk Devletleri</div>
+        <div><input type="checkbox"> Türk-İslam Devletleri</div>
+        <div><input type="checkbox"> Osmanlı Devleti</div>
+        <div><input type="checkbox"> Kurtuluş Savaşı</div>
+        <div><input type="checkbox"> Atatürk İlke ve İnkılapları</div>
+        <div><input type="checkbox"> Çağdaş Türk ve Dünya Tarihi</div>
+      </div>
+
+      <!-- Türkçe -->
+      <div class="node main" onclick="toggleBranch('turkce')">📗 Türkçe</div>
+      <div class="branch" id="branch-turkce">
+        <div><input type="checkbox"> Sözcükte Anlam</div>
+        <div><input type="checkbox"> Cümlede Anlam</div>
+        <div><input type="checkbox"> Paragraf</div>
+        <div><input type="checkbox"> Dil Bilgisi</div>
+        <div><input type="checkbox"> Ses Bilgisi</div>
+        <div><input type="checkbox"> Yazım Kuralları</div>
+        <div><input type="checkbox"> Noktalama İşaretleri</div>
+        <div><input type="checkbox"> Anlatım Bozuklukları</div>
+        <div><input type="checkbox"> Sözel Mantık Soruları</div>
+      </div>
+
+      <!-- Coğrafya -->
+      <div class="node main" onclick="toggleBranch('geo2')">🗺️ Coğrafya</div>
+      <div class="branch" id="branch-geo2">
+        <div><input type="checkbox"> Türkiye’nin Coğrafi Konumu</div>
+        <div><input type="checkbox"> Türkiye’nin İklimi ve Bitki Örtüsü</div>
+        <div><input type="checkbox"> Türkiye’nin Fiziki Özellikleri</div>
+        <div><input type="checkbox"> Türkiye’de Nüfus ve Yerleşme</div>
+        <div><input type="checkbox"> Türkiye’nin Ekonomik Özellikleri</div>
+      </div>
+
+      <!-- Vatandaşlık -->
+      <div class="node main" onclick="toggleBranch('citizenship')">⚖️ Vatandaşlık</div>
+      <div class="branch" id="branch-citizenship">
+        <div><input type="checkbox"> Hukuk Başlangıcı ve Genel Kamu Hukuku</div>
+        <div><input type="checkbox"> Yasama, Yürütme, Yargı</div>
+        <div><input type="checkbox"> Anayasa</div>
+        <div><input type="checkbox"> İdare</div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+
+</body>
+</html>
