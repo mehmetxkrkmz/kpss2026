@@ -319,3 +319,10 @@ body.dark .btn-link:hover {
   width: 100%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+    color: #888;
+}
+
